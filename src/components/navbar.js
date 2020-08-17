@@ -32,20 +32,20 @@ export function Navigbar() {
                 <ul className="navbar-nav mr-auto">
                     {currentUser ? (
                         <div className="container">
-                                <li className="nav-item ">
-                                    <Link className="nav-link" to="/additem">Add item</Link>
-                                </li>
-                                <li className="nav-item ">
-                                    <Link className="nav-link" to="/edititem">Edit item</Link>
-                                </li>
-                                <li className="nav-item ">
-                                    <Link className="nav-link" to="/deleteitem">Delete item</Link>
-                                </li>
-                                <li className="nav-item ">
-                                    <Link className="nav-link" to="/" onClick={LogOut}>
-                                        <span className="fas fa-sign-out-alt"/>
-                                    </Link>
-                                </li>
+                            <li className="nav-item ">
+                                <Link className="nav-link" to="/additem">Add item</Link>
+                            </li>
+                            <li className="nav-item ">
+                                <Link className="nav-link" to="/edititem">Edit item</Link>
+                            </li>
+                            <li className="nav-item ">
+                                <Link className="nav-link" to="/deleteitem">Delete item</Link>
+                            </li>
+                            <li className="nav-item ">
+                                <Link className="nav-link" to="/" onClick={LogOut}>
+                                    <span className="fas fa-sign-out-alt"/>
+                                </Link>
+                            </li>
                         </div>
                     ) : (
                         <div className="container">

@@ -51,6 +51,7 @@ export function AddItem() {
                                 <input
                                     type="text"
                                     className="form-control"
+                                    placeholder="Person name"
                                     name="name"
                                     required
                                 />
@@ -68,6 +69,7 @@ export function AddItem() {
                                 <input
                                     type="text"
                                     className="form-control"
+                                    placeholder="Person age"
                                     name="age"
                                     required
                                 />

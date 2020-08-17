@@ -72,6 +72,7 @@ export function DeleteItem() {
                     </tbody>
                 </table>
             </div>
+            <hr/>
             <div>
                 <Pagination amountOfPages={amountOfPages} setCurrentPage={setCurrentPage}/>
             </div>

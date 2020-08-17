@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/all.min.css"
-import "bootstrap/dist/css/font-glyphicons.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import {Navigbar} from "./components/navbar";
 import {Routes} from "./components/routes";

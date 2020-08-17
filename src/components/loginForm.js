@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
+import React, {useEffect, useState} from 'react';
 
 export function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    useEffect(() => {
+        getToken();
+    });
 
     function onChangeUsername(e) {
         setUsername(e.target.value)
@@ -13,8 +16,7 @@ export function Login() {
         setPassword(e.target.value)
     }
 
-    function getToken(e) {
-        e.preventDefault();
+    function getToken() {
         console.log(username, password);
         const token = Date.now().toString();
         if (username && password) {
@@ -57,7 +59,9 @@ export function Login() {
                         </div>
                     </div>
                     <div className="form-group">
-                        <button className="btn btn-primary" type="submit">Submit form</button>
+                        <button className="btn btn-primary" type="submit">
+                            Submit form
+                        </button>
                     </div>
                 </form>
             </div>

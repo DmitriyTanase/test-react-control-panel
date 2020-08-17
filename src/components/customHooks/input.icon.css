@@ -1,17 +1,10 @@
-.name-user::before {
-    content: "\e003";
-    font-family: "Glyphicons Halflings";
-    font-weight: 600;
-    position: absolute;
-    top: 50%;
-    left: 0.5rem;
-    height: 1rem;
-    line-height: 1rem;
-    transform: translateY(-0.5rem);
-    color: #000000;
-    z-index: 2;
-    pointer-events: none;
+.fa-search:before {
+    font-size: 25px;
+}
 
+#searchIcon {
+    top: 19%;
+    left: 0.3rem;
 }
 
 .name-user input {
