@@ -6,7 +6,7 @@ export function Login() {
 
     useEffect(() => {
         getToken();
-    });
+    });//аналогичный useEffect с функцией logOut не работает, вынужден делать костыли
 
     function onChangeUsername(e) {
         setUsername(e.target.value)
@@ -19,10 +19,16 @@ export function Login() {
     function getToken() {
         console.log(username, password);
         const token = Date.now().toString();
+        //ChangeLocation();
         if (username && password) {
             localStorage.setItem('userToken', JSON.stringify(token))
         }
         console.log(localStorage.getItem('userToken'))
+    }
+
+    function ChangeLocation() {
+        //костыль
+        document.location.assign('http://localhost:3000/additem');
     }
 
     return (

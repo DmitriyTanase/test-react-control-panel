@@ -6,7 +6,7 @@ export function Navigbar() {
 
     useEffect(() => {
         Authentication();
-    });
+    }, currentUser);// изменения значения currentUser должен вызвать новый рендер, но не вызывает, делаю костыль.
 
     function Authentication() {
         setCurrentUser(localStorage.getItem('userToken'));
@@ -15,9 +15,15 @@ export function Navigbar() {
 
     function LogOut() {
         localStorage.removeItem('userToken');
+        ChangeLocation();
         console.log('deleted:' + localStorage.getItem('userToken'))
     }
 
+    function ChangeLocation() {
+        //костыль
+        document.location.reload();
+        document.location.assign('http://localhost:3000/listOfItem');
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

@@ -27,7 +27,7 @@ export function DeleteItem() {
     function ShowNotification() {
         $("<div/>")
             .html('<div class="alert alert-danger">Person are deleted</div>')
-            .appendTo('#notification')//or body
+            .appendTo('#notification')
             .delay(1000).fadeOut("slow", function() {
             $(this).remove();
         });
@@ -53,8 +53,8 @@ export function DeleteItem() {
                     </thead>
                     <tbody>
                     {filteredUsers.map((value, index) => (
-                        <tr>
-                            <th scope="row" key={index}>
+                        <tr key={index}>
+                            <th scope="row">
                                 {index + 1}
                             </th>
                             <td>{value.name}</td>
