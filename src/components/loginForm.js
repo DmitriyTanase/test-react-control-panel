@@ -4,9 +4,9 @@ export function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    useEffect(() => {
-        getToken();
-    });//аналогичный useEffect с функцией logOut не работает, вынужден делать костыли
+    // useEffect(() => {
+    //     getToken();
+    // });//аналогичный useEffect с функцией logOut не работает, вынужден делать костыли
 
     function onChangeUsername(e) {
         setUsername(e.target.value)
@@ -17,19 +17,19 @@ export function Login() {
     }
 
     function getToken() {
-        console.log(username, password);
+        // console.log(username, password);
         const token = Date.now().toString();
-        //ChangeLocation();
         if (username && password) {
             localStorage.setItem('userToken', JSON.stringify(token))
         }
-        console.log(localStorage.getItem('userToken'))
+        ChangeLocation()
+        // console.log(localStorage.getItem('userToken'))
     }
 
-    function ChangeLocation() {
-        //костыль
-        document.location.assign('http://localhost:3000/additem');
-    }
+     function ChangeLocation() {
+         //костыль
+         window.location.href = 'http://localhost:3000/additem'
+     }
 
     return (
         <div className="col-md-12">

@@ -1,28 +1,30 @@
 import {Link} from "react-router-dom";
 import React, {useState, useEffect} from 'react';
+import "./nav.bar.css"
 
 export function Navigbar() {
     const [currentUser, setCurrentUser] = useState(undefined);
 
     useEffect(() => {
         Authentication();
-    }, currentUser);// изменения значения currentUser должен вызвать новый рендер, но не вызывает, делаю костыль.
+    });// изменения значения currentUser должен вызвать новый рендер, но не вызывает, делаю костыль.
 
     function Authentication() {
         setCurrentUser(localStorage.getItem('userToken'));
-        console.log(currentUser);
+        //console.log(currentUser);
     }
 
     function LogOut() {
         localStorage.removeItem('userToken');
         ChangeLocation();
-        console.log('deleted:' + localStorage.getItem('userToken'))
+        //console.log('deleted:' + localStorage.getItem('userToken'))
     }
 
     function ChangeLocation() {
         //костыль
-        document.location.reload();
-        document.location.assign('http://localhost:3000/listOfItem');
+        //window.location.href = '/login';
+        window.location.reload()
+
     }
 
     return (
@@ -47,7 +49,7 @@ export function Navigbar() {
                             <li className="nav-item ">
                                 <Link className="nav-link" to="/deleteitem">Delete item</Link>
                             </li>
-                            <li className="nav-item ">
+                            <li className="nav-item" id="logoutIcon">
                                 <Link className="nav-link" to="/" onClick={LogOut}>
                                     <span className="fas fa-sign-out-alt"/>
                                 </Link>
@@ -56,12 +58,12 @@ export function Navigbar() {
                     ) : (
                         <div className="container">
                             <li className="nav-item">
+                                <Link className="nav-link" to="/listOfItem">List of items</Link>
+                            </li>
+                            <li className="nav-item" id="loginIcon">
                                 <Link className="nav-link" to="/">
                                     <span className="fas fa-sign-in-alt"/>
                                 </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/listOfItem">List of items</Link>
                             </li>
                         </div>
                     )}
