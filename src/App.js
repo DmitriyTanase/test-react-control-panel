@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/css/all.min.css"
+import "@fortawesome/fontawesome-free/css/all.css"
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "jquery/dist/jquery.min"
 import {Navigbar} from "./components/navbar";
