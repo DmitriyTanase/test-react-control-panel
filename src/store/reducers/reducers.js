@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import add_reducer from './add.reducer';
-import delete_reducer from './delete.reducer';
+// import add_reducer from './add.reducer';
+// import delete_reducer from './delete.reducer';
 import edit_reducer from './edit.reducer';
 import initialState from '../initialState';
 
@@ -8,9 +8,9 @@ import initialState from '../initialState';
 //     return state
 // }
 
-const reducers = combineReducers({
-    add_reducer,
-    delete_reducer
-});
+// const reducers = combineReducers({
+//     add_reducer,
+//     delete_reducer
+// });
 
-export default reducers;
+// export default reducers;
