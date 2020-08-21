@@ -19,7 +19,7 @@ export function Routes() {
     return (
         <Switch>
             <Route exact path="/" render = {() => <Redirect to="/login"/>}/>
-            <Route exact path="/login" component={Login}/>
+            <Route exact path="/login" render={() => isLoggedIn ? <AddItem/> : <Login/>}/>
             <Route path="/additem" render={() => isLoggedIn ? <AddItem/> : <Redirect to="/login"/>}/>
             <Route path="/edititem" render={() => isLoggedIn ? <EditUsers/> : <Redirect to="/login"/>}/>
             <Route path="/deleteitem" render={() => isLoggedIn ? <DeleteItem/> : <Redirect to="/login"/>}/>
