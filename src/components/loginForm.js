@@ -1,12 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
+import { Redirect } from "react-router-dom";
 
 export function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
-    // useEffect(() => {
-    //     getToken();
-    // });//аналогичный useEffect с функцией logOut не работает, вынужден делать костыли
+    const [isAuthed, setIsAuthed] = useState(false);
+    console.log(isAuthed);
 
     function onChangeUsername(e) {
         setUsername(e.target.value)
@@ -17,19 +16,14 @@ export function Login() {
     }
 
     function getToken() {
-        // console.log(username, password);
         const token = Date.now().toString();
         if (username && password) {
-            localStorage.setItem('userToken', JSON.stringify(token))
+            localStorage.setItem('userToken', JSON.stringify(token));
+            setIsAuthed(true)
         }
-        ChangeLocation()
-        // console.log(localStorage.getItem('userToken'))
     }
 
-     function ChangeLocation() {
-         //костыль
-         window.location.href = 'http://localhost:3000/additem'
-     }
+    //if (isAuthed) return <Redirect to="/additem" />;
 
     return (
         <div className="col-md-12">

@@ -7,24 +7,19 @@ export function Navigbar() {
 
     useEffect(() => {
         Authentication();
-    });// изменения значения currentUser должен вызвать новый рендер, но не вызывает, делаю костыль.
+    });
 
     function Authentication() {
         setCurrentUser(localStorage.getItem('userToken'));
-        //console.log(currentUser);
     }
 
     function LogOut() {
         localStorage.removeItem('userToken');
         ChangeLocation();
-        //console.log('deleted:' + localStorage.getItem('userToken'))
     }
 
     function ChangeLocation() {
-        //костыль
-        //window.location.href = '/login';
         window.location.reload()
-
     }
 
     return (
