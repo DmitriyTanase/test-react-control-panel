@@ -8,6 +8,7 @@
 * sign out
 
 ## Technology stack:
+* node js: ^14.7.0
 *  react: ^16.13.1,
 *  redux: ^4.0.5,
 *  react-router-dom: ^5.2.0,
