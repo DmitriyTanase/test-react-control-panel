@@ -1,3 +1,26 @@
+#### This test task are administrative interface for management some items.
+## Basic functionality:
+* add new items,
+* edit items,
+* delete items,
+* search and pagination,
+* sign in,
+* sign out
+
+## Technology stack:
+*  react: ^16.13.1,
+*  redux: ^4.0.5,
+*  react-router-dom: ^5.2.0,
+*  jquery: ^3.5.1,
+*  bootstrap: ^4.5.0
+
+## Developed with hooks:
+* `useState`, 
+* `useEffect`, 
+* `useMemo`, 
+* `useDispatch`, 
+* `useSelector`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
