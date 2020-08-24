@@ -4,8 +4,8 @@ import { Redirect } from "react-router-dom";
 export function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [isAuthed, setIsAuthed] = useState(false);
-    console.log(isAuthed);
+    //const [isAuthed, setIsAuthed] = useState(false);
+    //console.log(isAuthed);
 
     function onChangeUsername(e) {
         setUsername(e.target.value)
@@ -19,7 +19,7 @@ export function Login() {
         const token = Date.now().toString();
         if (username && password) {
             localStorage.setItem('userToken', JSON.stringify(token));
-            setIsAuthed(true)
+            //setIsAuthed(true)
         }
     }
 

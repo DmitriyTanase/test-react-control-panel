@@ -12,12 +12,12 @@ import "./list.item.css"
 
 export function ListOfItems() {
     const users = useSelector(state => state);
-    const { setCurrentPage, currentUsers, amountOfPages } = usePagination(users);
-    const { filteredUsers, setSearch } = useSearch(currentUsers);
+    const { filteredUsers, setSearch } = useSearch(users);
+    const { setCurrentPage, currentUsers, amountOfPages } = usePagination(filteredUsers);
 
     let {url} = useRouteMatch();
 
-    let items = filteredUsers.map(function (value, index) {
+    let items = currentUsers.map(function (value, index) {
         return (
             <form key={index}>
                 <div className="input-group">

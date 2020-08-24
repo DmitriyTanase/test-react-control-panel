@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {usePagination} from "./customHooks/paginationHook";
 import Pagination from "./customHooks/paginationForHook";
@@ -10,8 +10,12 @@ import "./delete.item.css"
 export function DeleteItem() {
     const users = useSelector(state => state);
     const dispatch = useDispatch();
-    const { setCurrentPage, currentUsers, amountOfPages } = usePagination(users);
-    const { filteredUsers, setSearch } = useSearch(currentUsers);
+    const { filteredUsers, setSearch } = useSearch(users);
+    const { setCurrentPage, currentUsers, amountOfPages } = usePagination(filteredUsers);
+
+    useEffect(() => {
+        HandleSubmit();
+    }, currentUsers);
 
     const HandleSubmit = index => e => {
         e.preventDefault();
@@ -52,7 +56,7 @@ export function DeleteItem() {
                     </tr>
                     </thead>
                     <tbody>
-                    {filteredUsers.map((value, index) => (
+                    {currentUsers.map((value, index) => (
                         <tr key={index}>
                             <th scope="row">
                                 {index + 1}

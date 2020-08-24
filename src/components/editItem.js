@@ -10,8 +10,8 @@ import "./edit.item.css"
 export function EditUsers() {
     const users = useSelector(state => state);
     const dispatch = useDispatch();
-    const { setCurrentPage, currentUsers, amountOfPages } = usePagination(users);
-    const { filteredUsers, setSearch } = useSearch(currentUsers);
+    const { filteredUsers, setSearch } = useSearch(users);
+    const { setCurrentPage, currentUsers, amountOfPages } = usePagination(filteredUsers);
 
     const HandleSubmit = index => e => {
         e.preventDefault();
@@ -37,7 +37,7 @@ export function EditUsers() {
         });
     }
 
-    const listItems = filteredUsers.map(function (value, index) {
+    const listItems = currentUsers.map(function (value, index) {
         return (
             <form key={index} onSubmit={HandleSubmit(index)}>
                 <div className="input-group">

@@ -1,19 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useMemo} from "react";
 
 const Pagination = ({amountOfPages, setCurrentPage}) => {
     const [pageNumbers, setPageNumbers] = useState([]);
 
-    useEffect(() => {
-        calculatePageNumbers();
-    }, [amountOfPages]);
+    // useEffect(() => {
+    //     calculatePageNumbers();
+    // }, [amountOfPages]);
+    //
+    // function calculatePageNumbers() {
+    //     const updatedPageNumbers = [];
+    //     for (let i = 1; i <= amountOfPages; i++) {
+    //         updatedPageNumbers.push(i);
+    //     }
+    //     setPageNumbers(updatedPageNumbers);
+    // }
 
-    function calculatePageNumbers() {
+    const paginationItems = useMemo(() => {
         const updatedPageNumbers = [];
+
         for (let i = 1; i <= amountOfPages; i++) {
             updatedPageNumbers.push(i);
         }
         setPageNumbers(updatedPageNumbers);
-    }
+    }, [amountOfPages]);
 
     const handleSetCurrentPage = number => {setCurrentPage(number)};
 
